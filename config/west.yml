@@ -44,7 +44,7 @@ manifest:
       revision: main
     - name: zmk-module-devtool
       remote: cormoran
-      revision: main
+      revision: f3d9d55cd40c81e8915def6f3cca182043e39462
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
