@@ -3,6 +3,8 @@
 # into SECTIONS, which already emits ROM output sections in this Zephyr.
 # This file is the manifest module, so it is processed before those modules.
 
+zephyr_include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
+
 function(zephyr_linker_sources location)
   set(snippet_base       "${__build_dir}/include/generated")
   set(sections_path      "${snippet_base}/snippets-sections.ld")
