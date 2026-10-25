@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: cormoran
       url-base: https://github.com/cormoran
-    - name: inorichi
-      url-base: https://github.com/inorichi
     - name: caksoylar
       url-base: https://github.com/caksoylar
   projects:
@@ -32,8 +30,20 @@ manifest:
     - name: zmk-feature-runtime-combo
       remote: cormoran
       revision: main
-    - name: zmk-pmw3610-driver
-      remote: inorichi
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
+      revision: main
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-devtool
+      remote: cormoran
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
