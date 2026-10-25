@@ -55,22 +55,25 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
 
-        lang1 {
-            bindings = <&kp LANG2>;
-            key-positions = <34 35>;
-        };
-
-        lang2 {
-            bindings = <&kp LANG1>;
-            key-positions = <36 37>;
-        };
-
-        tab {
-            bindings = <&kp ESC>;
+        combo_esc {
             key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            display-name = "Esc";
+        };
+
+        combo_lang2 {
+            key-positions = <34 35>;
+            bindings = <&kp LANG2>;
+            display-name = "LANG2";
+        };
+
+        combo_lang1 {
+            key-positions = <36 37>;
+            bindings = <&kp LANG1>;
+            display-name = "LANG1";
         };
     };
 
