@@ -25,8 +25,8 @@ manifest:
       remote: cormoran
       revision: main
     - name: zmk-feature-custom-settings
-      remote: cormoran
-      revision: 56ad4260388486e513f07c45a6ab1a404e3e7878
+      url: https://github.com/y-sako/zmk-config-LiNEA40
+      revision: 0d78ae54bf59fbbc959992e83bd55cca6f0b8368
     - name: zmk-feature-runtime-combo
       remote: cormoran
       revision: main
