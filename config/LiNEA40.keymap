@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 
 &mt {
     tapping-term-ms = <300>;
@@ -38,18 +39,19 @@
     };
 
     behaviors {
-        encoder_msc: sensor_rotate_msc {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-
+        rsr_scroll: rsr_scroll {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
             tap-ms = <20>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
         };
 
-        encoder_kp: sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+        rsr_volume: rsr_volume {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            cw-binding = <&kp C_VOL_UP>;
+            ccw-binding = <&kp C_VOL_DN>;
         };
     };
 
@@ -84,7 +86,7 @@
 &lt 4 LSHIFT  &kp LALT    &kp LGUI    &kp LS(LG(N4))  &lt 2 TAB    &lt 1 SPACE    &lt 1 BACKSPACE  &lt 3 ENTER  &kp EQUAL   &kp MINUS   &lt 4 PLUS
             >;
 
-            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&rsr_scroll>;
         };
 
         layer_1 {
@@ -116,7 +118,7 @@
 &kp CARET   &kp DOT            &kp NUMBER_0       &trans              &kp SLASH        &kp EQUAL    &kp BACKSPACE  &kp ENTER  &kp GLOBE  &none    &none
             >;
 
-            sensor-bindings = <&encoder_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_volume>;
         };
 
         layer_4 {
