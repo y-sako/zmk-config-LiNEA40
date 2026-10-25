@@ -11,10 +11,8 @@ if ZMK_CUSTOM_SETTINGS
 # Found on real hardware: with a persisted keyspace entry present, boot
 # overflowed the 1024-byte main stack (usage fault in arch_system_halt with
 # a corrupted return address) before USB even enumerated, while the same
-# image booted fine with 2048. configdefault only raises the default; an
-# explicit board/user setting still wins.
-configdefault MAIN_STACK_SIZE
-    default 2048
+# image booted fine with 2048. The keyboard config sets
+# CONFIG_MAIN_STACK_SIZE=2048. This Zephyr cannot parse configdefault.
 
 config ZMK_CUSTOM_SETTINGS_VALUE_MAX_SIZE
     int "Maximum single-frame custom setting value size"
